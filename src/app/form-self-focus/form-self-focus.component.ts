@@ -17,9 +17,16 @@ export class FormSelfFocusComponent implements OnInit {
   }
 
   focus() {
-    setTimeout(() => {
-      this.input1?.nativeElement.focus();
-    }, 100);
+    if (this.input1) {
+      setTimeout(() => {
+        this.input1?.nativeElement.focus();
+      }, 100);
+    } else {
+      const firstInput = document.querySelector('form > input') as any;
+      setTimeout(() => {
+        firstInput?.focus();
+      }, 100);
+    }
   }
 
 }
