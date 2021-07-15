@@ -1,0 +1,4 @@
+<div *ngFor="let dataItem of dataItems">{{dataItem.name}}</div>
+<input type="text"  *ngIf="showInput" id="input1" #input1/>
+<input type="button" value="add" (click)="addItem()" />
+<input type="button" value="show/hide"  (click)="doShowInput()" />
